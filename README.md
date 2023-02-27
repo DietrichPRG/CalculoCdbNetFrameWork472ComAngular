@@ -95,7 +95,8 @@ Metodo que realiza o calculo seguindo a formula informada no exercicio, só que 
 - A apresentação dos valores na tabela está sendo formatado via pipe
 - Caso ocorra algum erro, um snack surgirá na parte inferior com o respectivo texto.
 - Os testes unitários foram implementados realizando as chamadas na API, então é importante estar com o BackEnd rodando para executar os testes.
-- A arquitetura do front foi pensada da seguinte forma:
-Componente recebe injetado o serviço de cdb
-Serviço de cdb recebe injetado o serviço da api
-Serviço da API gerencia o Axios
+
+A arquitetura do front foi pensada da seguinte forma:
+- Componente recebe injetado o serviço de cdb
+- Serviço de cdb recebe injetado o serviço da api
+- Serviço da API gerencia o Axios
