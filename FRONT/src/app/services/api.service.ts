@@ -17,7 +17,7 @@ export class ApiService {
 
   constructor() {
     this.axiosClient = axios.create({
-      timeout: 3000,
+      timeout: 30000,
       headers: this.headers,
     });
   }
