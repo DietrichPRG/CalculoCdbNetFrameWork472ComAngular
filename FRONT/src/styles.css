@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #222222; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1, h2, h3, h4, h5, h6, p, a, li, div, input, button, textarea {
+    color: #ffffff;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.box-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 2%;
+}
+
+.align-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align-around {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

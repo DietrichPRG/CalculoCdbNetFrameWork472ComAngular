@@ -1,0 +1,76 @@
+<div class="box-center">
+    <mat-card class="text-center" style="width:80%;padding: 32px;">
+        <mat-card-title>Calculadora de investimento CDB | Projeto B3</mat-card-title>
+        <mat-card-content>
+            <br />
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Valor do investimento</mat-label>
+                <input matInput [allowNegativeNumbers]="false" prefix="R$ " mask="separator.2" thousandSeparator="." type="text" [formControl]="valorDoInvestimentoFormControl">
+                <a mat-icon-button matSuffix>
+                    <mat-icon>attach_money</mat-icon>
+                </a>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Tempo de investimento em meses</mat-label>
+                <input matInput [formControl]="tempoDeInvestimentoFormControl" mask="0*" suffix=" meses" type="text">
+                <a mat-icon-button matSuffix>
+                    <mat-icon>access_time</mat-icon>
+                </a>
+            </mat-form-field>
+            <mat-slide-toggle [(ngModel)]="mostrarHistorico">Mostrar histórico</mat-slide-toggle>
+            <br />
+            <br />
+            <div class="align-between">
+                <button mat-raised-button class="w-100" (click)="calcular()" color="primary">Calcular</button>
+            </div>
+            <br />
+            <br />
+            <mat-divider></mat-divider>
+            <br />
+            <br />
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.length !== 0">
+                <caption>Tabela com o resultado do investimento.</caption>
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="Mes">
+                  <th mat-header-cell *matHeaderCellDef>Mes.</th>
+                  <td mat-cell *matCellDef="let element"> {{element.mesesInvestidos}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="valorInvestido">
+                  <th mat-header-cell *matHeaderCellDef>Valor Investido</th>
+                  <td mat-cell *matCellDef="let element"> {{element.valorInvestido | currency:'BRL'}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="valorAjustado">
+                  <th mat-header-cell *matHeaderCellDef>Total</th>
+                  <td mat-cell *matCellDef="let element"> {{element.valorAjustado | currency:'BRL'}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="IR">
+                  <th mat-header-cell *matHeaderCellDef>Aliquota IR</th>
+                  <td mat-cell *matCellDef="let element"> {{element.aliquotaIR  | percent:'1.2-2'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="ValorIR">
+                    <th mat-header-cell *matHeaderCellDef>Valor IR</th>
+                    <td mat-cell *matCellDef="let element"> {{element.valorIR | currency:'BRL'}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="valorLiquido">
+                    <th mat-header-cell *matHeaderCellDef>Resultado Liquido</th>
+                    <td mat-cell *matCellDef="let element"> {{element.valorLiquido | currency:'BRL'}} </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </mat-card-content>
+    </mat-card>
+</div>
