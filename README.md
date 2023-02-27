@@ -38,9 +38,9 @@ Para os testes unitários do back, basta acessar o menu de test e executar.
 ---
 
 ### Considerações da implementação ( back ):
-Parti do principio que estamos trabalhando com mercado financeiro, margem de erro é zero. Sendo assim optei por trabalhar com 2 objetos de valor ( Dinheiro & Percentual ). Ambos são readonly struct para melhor perfomance.
-
 Não implementei IOC pois só tem uma unica classe que poderia ser injetada, não vi muito sentido.
+
+Parti do principio que estamos trabalhando com mercado financeiro, margem de erro é zero. Sendo assim optei por trabalhar com 2 objetos de valor ( Dinheiro & Percentual ). Ambos são readonly struct para melhor perfomance.
 
 Tambem dividi o projeto do back em 3 camadas + teste, sendo elas:
 - API
